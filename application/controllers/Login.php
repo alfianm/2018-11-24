@@ -6,6 +6,7 @@ Class Login extends CI_Controller {
 
     parent::__construct();
     $this->load->model('Model_login');
+    $this->load->helper('url','html');
   }
 
   function index(){
@@ -29,8 +30,8 @@ Class Login extends CI_Controller {
         redirect('petugas/verifikasi');
       }
     }else{
-      $data['pesan']="Username atau Password Anda Salah";
-      $this->load->view('login',$data);
+     $this->session->set_flashdata('pesan','Username dan Password salah!');
+     redirect(base_url('login'),'refresh');
     }
 
 

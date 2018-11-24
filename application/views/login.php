@@ -60,7 +60,11 @@
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-
+<?php if ($pesan = $this->session->flashdata('pesan')): ?>
+  <script type="text/javascript">
+    alert('<?php echo $pesan; ?>');
+  </script>
+<?php endif; ?>
 <!-- jQuery 3 -->
 <script src="<?php echo base_url('assets/template/back/bower_components') ?>/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
